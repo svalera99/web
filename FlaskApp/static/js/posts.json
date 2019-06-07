@@ -1,0 +1,56 @@
+{
+  "1": {
+    "picture": "../static/images/sick1.jpg",
+    "name": "Guk Andriana",
+    "illness": "leikimiya",
+    "status": "3/7",
+    "age": "11 years old",
+    "blood-group": "B(III)",
+    "location": "Ukraine"
+  },
+  "2": {
+    "picture": "../static/images/sick2.jpg",
+    "name": "Bondar Serhii",
+    "illness": "limfoma",
+    "status": "1/2",
+    "age": "31 years old",
+    "blood-group": "AB",
+    "location": "Ukraine"
+  },
+  "3": {
+    "picture": "../static/images/sick3.jpg",
+    "name": "Dvyxrechen'ska Sofiya",
+    "illness": "Congenital heart defect",
+    "status": "1/5",
+    "age": "2 years old",
+    "blood-group": "any",
+    "location": "Ukraine"
+  },
+  "4": {
+    "picture": "../static/images/sick4.jpg",
+    "name": "Shostakova Anna",
+    "illness": "bloodloos while childbirth",
+    "status": "0/1",
+    "age": "31 years old",
+    "blood-group": "any",
+    "location": "Ukraine"
+  },
+  "5": {
+    "picture": "../static/images/sick5.jpg",
+    "name": "Raspopin Oleg",
+    "illness": "leikoz",
+    "status": "0/2",
+    "age": "55 years old",
+    "blood-group": "B(III)",
+    "location": "Ukraine"
+  },
+  "6": {
+    "picture": "../static/images/sick6.jpg",
+    "name": "Yunda Leonid",
+    "illness": "mieloma",
+    "status": "1/3",
+    "age": "66 years old",
+    "blood-group": "A(II)",
+    "location": "Ukraine"
+  }
+}

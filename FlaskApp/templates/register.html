@@ -1,0 +1,38 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<body>
+<script>
+window.onload = function () {
+	console.log(1);
+        let footer = document.getElementsByClassName("footer");
+        footer[0].style.position = 'absolute';
+        footer[0].style.bottom = '0';
+};
+</script>
+
+	<div class = "container">
+		<h3 class="container_register">Register</h3>
+		<br>
+		{% from "_formhelpers.html" import render_field %}
+		<form method=post action="/register/" style="width: 50%; margin-left: 25%">
+			<dl>
+				{{render_field(form.username)}}
+				{{render_field(form.email)}}
+				{{render_field(form.password)}}
+				{{render_field(form.confirm)}}
+				{{render_field(form.accept_tos)}}
+				{{render_field(form.accept_email)}}
+			</dl>
+			<p><input type=submit value=Register class="btn"></p>
+		</form>
+		
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+.footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    background-color: #E8E8E8;
+    width: 100%;
+}
+.left_info *, .right_info *{
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Blood Donation Resource</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="../static/css/bot_header.css">
+    <link rel="stylesheet" href="../static/css/top_header.css">
+    <link rel="stylesheet" href="../static/css/main_main.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
+    <script src="../static/js/jquery.loadTemplate.js" defer></script>
+    
+    <script src="../js/google_maps.js" defer></script>
+    <script src="../js/photo_generator.js" defer></script>
+
+
+</head>
+
+<header class="top_header">
+    <ul>
+        {% if session.logged_in %}
+            <li class="sign_in">
+                <a href="/logout/">
+                    <p>Logout</p>
+                </a>
+                {% else %}
+            </li>
+            <li class="sign_in">
+                <a href="/login/">
+                    <p>Sign in</p>
+                </a>
+            </li>
+            <li class="sign_up">
+                <a href="/register/">
+                    <p>Sign up</p>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</header>
+<header class="bot_header">
+    <div class="logo no_hover">
+        <a href="/">
+            <img src="../static/images/mainlogo.png" alt="logo" class="logo_img">
+        </a>
+    </div>
+    <div class="donate">
+        <a href="/centers/">
+            <p class="header_donate_txt">Donate Blood</p>
+        </a>
+    </div>
+    <div class="make_post">
+        <a href="/make-post/">
+            <p class="header_make_post_txt">Create Post</p>
+        </a>
+    </div>
+    <div class="know_more">
+        <a href="/knowmore/">
+            <p class="header_know_more_txt">Know more </p>
+        </a>
+    </div>
+    <div class="header_subscribe">
+        <a href="/subscribe/    ">
+            <p class=header_subscribe_txt>Subscribe</p>
+        </a>
+    </div>
+</header>
+<hr class="header_red_line">
+<body style="heigth: 100%">
+<div class="social_medias">
+    <div class="cont">
+        <a href="#">
+            <i class="fab fa-twitter-square fa-2x"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-facebook-square fa-2x"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-envelope-square fa-2x"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-money-bill-alt fa-2x"></i>
+        </a>
+    </div>
+</div>
+
+
+<div class="container" style="min-height:100%; width:80%; margin-left: 25rem;">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">?</span></button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<footer class="footer">
+    <div class="left_info">
+        <p>This project was create to make blood
+            donations in Ukraine easier</p>
+        <p class="date">2019</p>
+        <p class="company">TOB"VS_SV"</p>
+    </div>
+    <div class="right_info">
+        <a href="#">
+            <p>Contact Us</p>
+        </a>
+        <a href="#">
+            <p>blooddonation.ukr</p>
+        </a>
+    </div>
+</footer>
+<script id="template" type="text/html">
+    <div class="top_photo_name">
+        <img data-src="picture" alt="#" src="#">
+        <p data-content="name"></p>
+        <p data-content="illness"></p>
+    </div>
+    <div class="bot_descriptions">
+        <div data-content="status"></div>
+        <div data-content="age"></div>
+        <div data-content="blood_type"></div>
+        <div data-content="where"></div>
+    </div>
+</script>
+
+</body>
+</html>

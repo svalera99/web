@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="../static/css/bot_header.css">
+    <link rel="stylesheet" href="../static/css/top_header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.cs	s"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../img/blood.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
+    <script src="../static/js/google_maps.js" defer></script>
+    <script src="../static/js/photo_generator.js" defer></script>
+    <title>Directions Service</title>
+</head>
+<header class="top_header">
+    <ul>
+        {% if session.logged_in %}
+            <li class="sign_in">
+                <a href="/logout/">
+                    <p>Logout</p>
+                </a>
+                {% else %}
+            </li>
+            <li class="sign_in">
+                <a href="/login/">
+                    <p>Sign in</p>
+                </a>
+            </li>
+            <li class="sign_up">
+                <a href="/register/">
+                    <p>Sign up</p>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</header>
+<header class="bot_header">
+    <div class="logo no_hover">
+        <a href="/">
+            <img src="../static/images/mainlogo.png" alt="logo" class="logo_img">
+        </a>
+    </div>
+    <div class="donate">
+        <a href="/centers/">
+            <p class="header_donate_txt">Donate Blood</p>
+        </a>
+    </div>
+    <div class="make_post">
+        <a href="/make-post/">
+            <p class="header_make_post_txt">Create Post</p>
+        </a>
+    </div>
+    <div class="know_more">
+        <a href="/knowmore/">
+            <p class="header_know_more_txt">Know more </p>
+        </a>
+    </div>
+    <div class="header_subscribe">
+        <a href="/subscribe/">
+            <p class=header_subscribe_txt>Subscribe</p>
+        </a>
+    </div>
+</header>
+<hr class="header_red_line">
+
+<body>
+<div class="social_medias">
+    <div class="cont">
+        <a href="#">
+            <i class="fab fa-twitter-square fa-2x"></i>
+        </a>
+        <a href="#">
+            <i class="fab fa-facebook-square fa-2x"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-envelope-square fa-2x"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-money-bill-alt fa-2x"></i>
+        </a>
+    </div>
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script id="template" type="text/html">
+    <div class="top_photo_name">
+        <img data-src="picture" alt="#" src="#">
+        <p data-content="name"></p>
+        <p data-content="illness"></p>
+    </div>
+    <div class="bot_descriptions">
+        <div data-content="status"></div>
+        <div data-content="age"></div>
+        <div data-content="blood_type"></div>
+        <div data-content="where"></div>
+    </div>
+</script>
+
+
+<div id="floating-panel" class="floating_panel">
+    <!--    place for header-->
+    <div class="end_point_select">
+        <b>End: </b>
+        <select id="end">
+            <option value="None">Select Hospital</option>
+            <option value="1">str. Yaroslava Mudrogo</option>
+            <option value="2">str. Ivana Ognienka</option>
+            <option value="3">str. Pekars'ka</option>
+            <option value="4">Lychakivska St, 26</option>
+        </select>
+    </div>
+</div>
+<div id="map"></div>
+<article class="certificates">
+    <img src="#" alt="certificate" class="certificates_img" id="certificates_img">
+</article>
+<!--place for footer-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhvqV6VnW15kzWZOJ15j0U8GHdprmw8H4&callback=initMap">
+</script>
+<footer class="footer">
+    <div class="left_info">
+        <p>This project was create to make blood
+            donations in Ukraine easier</p>
+        <p class="date">2019</p>
+        <p class="company">TOB"VS_SV"</p>
+    </div>
+    <div class="right_info">
+        <a href="#">
+            <p>Contact Us</p>
+        </a>
+        <a href="#">
+            <p>blooddonation.ukr</p>
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>

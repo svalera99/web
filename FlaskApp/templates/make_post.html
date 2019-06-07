@@ -1,0 +1,39 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+    <body>
+<script>
+window.onload = function () {
+	console.log(1);
+        let footer = document.getElementsByClassName("footer");
+        footer[0].style.position = 'absolute';
+        footer[0].style.bottom = '0';
+};
+</script>
+
+    <div class="container">
+        <h4 class="container_provide-info">Provide information</h4>
+        <br>
+        {% from "_formhelpers.html" import render_field %}
+        <form method=POST action="/make-post/" enctype="multipart/form-data" style="width: 50%; margin-left: 25%">
+            <span>Name:</span><br/>
+            <input type="text" name="name" class="text-input"/><br/>
+            <span>Illness</span><br/>
+            <input type="text" name="illness" class="text-input"/><br/>
+            <span>Status:</span><br/>
+            <input type="text" name="status" class="text-input"/><br/>
+            <span>Age:</span><br/>
+            <input type="text" name="age" class="text-input"/><br/>
+            <span>Blood group:</span><br/>
+            <input type="text" name="blood" class="text-input"/><br/>
+            <span>Location:</span><br/>
+            <input type="text" name="location" class="text-input"/><br/><br/>
+            <span>Picture</span><br/>
+            <input type="file" name="file"/><br/><br/>
+            <input type=submit value="Create post" class="btn btn-danger dropdown-toggle">
+        </form>
+    </div>
+    </body>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+body{
+    font-family: 'Roboto', "Helvetica Neue", Arial;;
+}
+.main{
+    width: 45%;
+    margin: auto;
+}
+.hhd{
+    font-size: 3rem;
+    width: 60%;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.main h2{
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+.main p{
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
